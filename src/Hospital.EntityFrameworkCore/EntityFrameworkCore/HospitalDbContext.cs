@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Hospital.Appointments;
+using Hospital.Documents;
+using Hospital.User;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -24,6 +27,10 @@ public class HospitalDbContext :
     ITenantManagementDbContext
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
+
+    public DbSet<Appointment> Appointments { get; set; }
+    public DbSet<Document> Documents { get; set; }
+    public DbSet<Usr> Usrs { get; set; }
 
     #region Entities from the modules
 
